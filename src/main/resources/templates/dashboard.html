@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Controle de Entrega</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>Menu</h2>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/enderecos">Endereços</a>
+            <a href="/mercadorias">Mercadorias</a>
+            <a href="/logout">Sair</a>
+        </aside>
+
+        <main class="content">
+            <h1>Painel Inicial</h1>
+            <div class="card">
+                <h3>Bem-vindo ao sistema</h3>
+                <p>Esse é o sistema de controle de entrega.</p>
+                <p>Aqui você poderá cadastrar endereços e mercadorias.</p>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

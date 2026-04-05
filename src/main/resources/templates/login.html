@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Controle de Entrega</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="login-body">
+
+    <div class="login-box">
+        <h1>Controle de Entrega</h1>
+        <p>Faça login para acessar o sistema</p>
+
+        <form action="/login" method="post">
+            <label>Usuário</label>
+            <input type="text" name="usuario" placeholder="Digite o usuário" required>
+
+            <label>Senha</label>
+            <input type="password" name="senha" placeholder="Digite a senha" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        <p class="erro" th:if="${erro}" th:text="${erro}"></p>
+    </div>
+
+</body>
+</html>
