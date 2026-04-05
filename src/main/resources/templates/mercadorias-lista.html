@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Mercadorias</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="layout">
+    <aside class="sidebar">
+        <h2>Menu</h2>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/enderecos">Endereços</a>
+        <a href="/mercadorias">Mercadorias</a>
+        <a href="/logout">Sair</a>
+    </aside>
+
+    <main class="content">
+        <div class="topo-pagina">
+            <h1>Mercadorias Cadastradas</h1>
+            <a href="/mercadorias/nova" class="botao-link">Nova Mercadoria</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                    <th>Categoria</th>
+                    <th>Endereço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="mercadoria : ${mercadorias}">
+                    <td th:text="${mercadoria.id}"></td>
+                    <td th:text="${mercadoria.nome}"></td>
+                    <td th:text="${mercadoria.descricao}"></td>
+                    <td th:text="${mercadoria.quantidade}"></td>
+                    <td th:text="${mercadoria.valor}"></td>
+                    <td th:text="${mercadoria.categoria}"></td>
+                    <td th:text="${mercadoria.endereco != null ? mercadoria.endereco.logradouro + ', ' + mercadoria.endereco.numero : 'Sem endereço'}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
+
+</body>
+</html>
